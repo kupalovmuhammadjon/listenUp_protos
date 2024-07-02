@@ -58,3 +58,7 @@ message UpdateCollaborator{
     string user_id = 3;
     string role = 4;
 }
+
+message PodcastsId {
+    repeated string PodcastsId = 1;
+}
