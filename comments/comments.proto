@@ -3,10 +3,10 @@ syntax = "proto3";
 option go_package = "genproto/comments";
 
 service Comments {
-    rpc CreateCommentByPodcastId(CreateComment) returns (ID);
-    rpc GetCommentsByPodcastId(ID) returns (AllComments);
-    rpc CreateCommentByEpisodeId(EpisodeComment) returns (ID);
-    rpc GetCommentsByEpisodeId(ID) returns (AllComments);
+    rpc CreateCommentByPodcastId(CreateComment) returns (IDCom);
+    rpc GetCommentsByPodcastId(IDCom) returns (AllComments);
+    rpc CreateCommentByEpisodeId(EpisodeComment) returns (IDCom);
+    rpc GetCommentsByEpisodeId(IDCom) returns (AllComments);
     rpc CountComments(CountFilter) returns (CommentCount);
 }
 
@@ -22,7 +22,7 @@ message EpisodeComment{
   string content = 3;
 }
 
-message ID {
+message IDCom {
   string id = 1;
 }
 

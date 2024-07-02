@@ -3,11 +3,11 @@ syntax = "proto3";
 option go_package = "genproto/collaborations";
 
 service Collaborations {
-    rpc CreateInvitation(CreateInvite) returns (ID);
-    rpc RespondInvitation(CreateCollaboration) returns (ID);
-    rpc GetCollaboratorsByPodcastId(ID) returns (Collaborators);
-    rpc UpdateCollaboratorByPodcastId(UpdateCollaborator) returns (Void);
-    rpc DeleteCollaboratorByPodcastId(Ids) returns (Void);
+    rpc CreateInvitation(CreateInvite) returns (IDCol);
+    rpc RespondInvitation(CreateCollaboration) returns (IDCol);
+    rpc GetCollaboratorsByPodcastId(IDCol) returns (Collaborators);
+    rpc UpdateCollaboratorByPodcastId(UpdateCollaborator) returns (VoidCol);
+    rpc DeleteCollaboratorByPodcastId(IdsCol) returns (VoidCol);
 }
 
 message CreateInvite{
@@ -16,11 +16,11 @@ message CreateInvite{
     string invitee_id = 3;
 }
 
-message ID {
+message IDCol {
     string id = 1;
 }
 
-message Ids {
+message IdsCol {
     string PodcastId = 1;
     string UserId = 2;
 }
@@ -43,7 +43,7 @@ message Collaborators {
     repeated Collaborator collaborators = 1;
 }
 
-message Void{
+message VoidCol{
 }
 
 message CollaboratorToGet{
@@ -59,6 +59,6 @@ message UpdateCollaborator{
     string role = 4;
 }
 
-message PodcastsId {
+message PodcastsIdCol {
     repeated string PodcastsId = 1;
 }
