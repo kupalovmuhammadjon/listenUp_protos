@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "genproto/authentication";
 
-package protos;
+package authentication;
 
 service Authentication {
     rpc Register (RegisterRequest) returns (RegisterResponse);

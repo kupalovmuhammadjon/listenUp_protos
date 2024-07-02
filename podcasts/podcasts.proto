@@ -2,12 +2,14 @@ syntax = "proto3";
 
 option go_package = "genproto/podcasts";
 
+package podcasts;
+
 service Podcasts {
-    rpc CreatePodcast(PodcastCreate) returns (IDPod) {}
-    rpc GetPodcastById(IDPod) returns (Podcast) {}
-    rpc UpdatePodcast(PodcastUpdate) returns (VoidPod) {}
-    rpc DeletePodcast(IDPod) returns (VoidPod) {}
-    rpc GetUserPodcasts(IDPod) returns (UserPodcasts) {}
+    rpc CreatePodcast(PodcastCreate) returns (ID) {}
+    rpc GetPodcastById(ID) returns (Podcast) {}
+    rpc UpdatePodcast(PodcastUpdate) returns (Void) {}
+    rpc DeletePodcast(ID) returns (Void) {}
+    rpc GetUserPodcasts(ID) returns (UserPodcasts) {}
 }
 
 message PodcastCreate {
@@ -17,7 +19,7 @@ message PodcastCreate {
     string status = 4;
 }
 
-message IDPod {
+message ID {
     string id = 1;
 }
 
@@ -38,7 +40,7 @@ message PodcastUpdate {
     string status = 5;
 }
 
-message VoidPod {
+message Void {
 }
 
 message UserPodcasts {

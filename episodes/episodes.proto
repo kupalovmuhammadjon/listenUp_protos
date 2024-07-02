@@ -2,12 +2,14 @@ syntax = "proto3";
 
 option go_package = "genproto/episodes";
 
+package episodes;
+
 service EpisodesService {
-    rpc CreatePodcastEpisode(EpisodeCreate) returns (IDEp) {}
-    rpc GetEpisodesByPodcastId(IDEp) returns (Episodes) {}
-    rpc UpdateEpisode(IDsEp) returns (VoidEp) {}
-    rpc DeleteEpisode(IDsForDelete) returns (VoidEp) {}
-    rpc PublishPodcast(IDEp) returns (SuccessEp) {}
+    rpc CreatePodcastEpisode(EpisodeCreate) returns (ID) {}
+    rpc GetEpisodesByPodcastId(ID) returns (Episodes) {}
+    rpc UpdateEpisode(IDs) returns (Void) {}
+    rpc DeleteEpisode(IDsForDelete) returns (Void) {}
+    rpc PublishPodcast(ID) returns (Success) {}
 }
 
 message EpisodeCreate {
@@ -21,7 +23,7 @@ message EpisodeCreate {
     repeated string tags = 8;
 }
 
-message IDEp {
+message ID {
     string id = 1;
 }
 
@@ -43,10 +45,10 @@ message Episodes {
     repeated Episode episodes = 1;
 }
 
-message VoidEp {
+message Void {
 }
 
-message IDsEp {
+message IDs {
     string podcast_id = 1;
     string episode_id = 2;
     EpisodeCreate episode = 3;
@@ -57,6 +59,6 @@ message IDsForDelete {
     string episode_id = 2;
 }
 
-message SuccessEp {
+message Success {
     bool success = 1;
 }

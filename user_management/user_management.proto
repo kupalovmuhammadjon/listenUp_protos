@@ -2,22 +2,22 @@ syntax = "proto3";
 
 option go_package = "genproto/user";
 
-package protos;
+package user;
 
 service UserManagement {
-    rpc GetUserByID (IDUser) returns (User);
-    rpc UpdateUser (User) returns (VoidUser);
-    rpc DeleteUser (IDUser) returns (VoidUser);
-    rpc GetUserProfile (IDUser) returns (Profile);
-    rpc UpdateUserProfile (Profile) returns (VoidUser);
+    rpc GetUserByID (ID) returns (User);
+    rpc UpdateUser (User) returns (Void);
+    rpc DeleteUser (ID) returns (Void);
+    rpc GetUserProfile (ID) returns (Profile);
+    rpc UpdateUserProfile (Profile) returns (Void);
 }
 
 
-message IDUser {
+message ID {
     string id = 1;
 }
 
-message VoidUser {
+message Void {
 }
 
 message User {
