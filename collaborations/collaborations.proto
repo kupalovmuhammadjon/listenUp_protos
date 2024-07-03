@@ -9,7 +9,7 @@ service Collaborations {
     rpc RespondInvitation(CreateCollaboration) returns (ID);
     rpc GetCollaboratorsByPodcastId(ID) returns (Collaborators);
     rpc UpdateCollaboratorByPodcastId(UpdateCollaborator) returns (Void);
-    rpc DeleteCollaboratorByPodcastId(IdsCol) returns (Void);
+    rpc DeleteCollaboratorByPodcastId(Ids) returns (Void);
 }
 
 message CreateInvite{
@@ -22,7 +22,7 @@ message ID {
     string id = 1;
 }
 
-message IdsCol {
+message Ids {
     string PodcastId = 1;
     string UserId = 2;
 }
