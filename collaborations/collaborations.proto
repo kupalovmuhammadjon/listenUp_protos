@@ -10,6 +10,7 @@ service Collaborations {
     rpc GetCollaboratorsByPodcastId(ID) returns (Collaborators);
     rpc UpdateCollaboratorByPodcastId(UpdateCollaborator) returns (Void);
     rpc DeleteCollaboratorByPodcastId(Ids) returns (Void);
+    rpc GetAllPodcastsUsersWorkedOn(PodcastsId) returns (PodcastsId);
 }
 
 message CreateInvite{
