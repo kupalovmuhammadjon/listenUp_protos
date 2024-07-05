@@ -10,6 +10,7 @@ service Podcasts {
     rpc UpdatePodcast(PodcastUpdate) returns (Void) {}
     rpc DeletePodcast(ID) returns (Void) {}
     rpc GetUserPodcasts(Filter) returns (UserPodcasts) {}
+    rpc PublishPodcast(ID) returns (Success) {}
 }
 
 message PodcastCreate {
@@ -53,3 +54,6 @@ message UserPodcasts {
     repeated Podcast Podcasts = 1;
 }
 
+message Success {
+    bool success = 1;
+}
