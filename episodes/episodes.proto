@@ -9,7 +9,6 @@ service EpisodesService {
     rpc GetEpisodesByPodcastId(Filter) returns (Episodes) {}
     rpc UpdateEpisode(IDs) returns (Void) {}
     rpc DeleteEpisode(IDsForDelete) returns (Void) {}
-    rpc PublishPodcast(ID) returns (Success) {}
     rpc SearchEpisodeByTitle(Title) returns (Episode) {}
     rpc ValidateEpisodeId(ID) returns (Success) {}
 }
