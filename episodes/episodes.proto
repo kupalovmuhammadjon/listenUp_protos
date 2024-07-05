@@ -10,7 +10,7 @@ service EpisodesService {
     rpc UpdateEpisode(IDs) returns (Void) {}
     rpc DeleteEpisode(IDsForDelete) returns (Void) {}
     rpc PublishPodcast(ID) returns (Success) {}
-    rpc ValidatePodcastId(ID) returns (Success) {}
+    rpc ValidateEpisodetId(ID) returns (Success) {}
 }
 
 message EpisodeCreate {
