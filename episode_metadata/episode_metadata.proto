@@ -9,7 +9,7 @@ service episode_metadata {
     rpc GetTrendingPodcasts(Void) returns (Podcasts) {}
     rpc GetRecommendedPodcasts(ID) returns (Podcasts) {}
     rpc GetPodcastsByGenre(Genres) returns (Podcasts) {}
-    rpc SearchPodcast(Title) returns (Podcasts) {}
+    rpc SearchEpisode(Title) returns (Podcasts) {}
 }
 
 message Void {}
