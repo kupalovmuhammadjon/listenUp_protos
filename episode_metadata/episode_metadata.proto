@@ -8,7 +8,7 @@ service episode_metadata {
     rpc CreateEpisodeMetaData(EpisodeMetadata) returns (Void) {}
     rpc GetTrendingPodcasts(Void) returns (Podcasts) {}
     rpc GetRecommendedPodcasts(ID) returns (Podcasts) {}
-    rpc GetPodcastsByGenre(Genres) returns (Podcasts) {}
+    rpc GetPodcastsByGenre(Filter) returns (Podcasts) {}
     rpc SearchEpisode(Title) returns (Episode) {}
 }
 
@@ -30,8 +30,10 @@ message Podcasts {
     repeated Podcast Podcasts = 1;
 }
 
-message Genres {
+message Filter {
     repeated string Genres = 1;
+    int64 limit = 2;
+    int64 offset = 3;
 }
 
 message Title {
