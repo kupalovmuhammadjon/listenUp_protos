@@ -32,8 +32,7 @@ message Podcasts {
 
 message Filter {
     repeated string Genres = 1;
-    int64 limit = 2;
-    int64 offset = 3;
+    Pagination pagination = 2;
 }
 
 message Title {
@@ -70,4 +69,9 @@ message Episode {
     int64 comment_count = 12;
     string created_at = 13;
     string updated_at = 14;
+}
+
+message Pagination {
+    int64 limit = 1;
+    int64 offset = 2;
 }
