@@ -9,8 +9,8 @@ service EpisodesService {
     rpc GetEpisodesByPodcastId(Filter) returns (Episodes) {}
     rpc UpdateEpisode(IDs) returns (Void) {}
     rpc DeleteEpisode(IDsForDelete) returns (Void) {}
-    rpc PublishPodcast(ID) returns (Success) {}
-    rpc ValidatePodcastId(ID) returns (Success) {}
+    rpc SearchEpisodeByTitle(Title) returns (Episode) {}
+    rpc ValidateEpisodeId(ID) returns (Success) {}
 }
 
 message EpisodeCreate {
@@ -68,4 +68,8 @@ message IDsForDelete {
 
 message Success {
     bool success = 1;
+}
+
+message Title {
+    string title = 1;
 }
