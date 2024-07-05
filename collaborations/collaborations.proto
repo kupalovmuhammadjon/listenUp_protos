@@ -12,7 +12,6 @@ service Collaborations {
     rpc DeleteCollaboratorByPodcastId(Ids) returns (Void);
     rpc GetAllPodcastsUsersWorkedOn(PodcastsId) returns (PodcastsId);
     rpc ValidateInvitationId(ID) returns (Exists);
-    rpc ValidateCommentId(ID) returns (Exists);
     rpc ValidateCollaborationId(ID) returns (Exists);
 }
 
