@@ -10,6 +10,7 @@ service Podcasts {
     rpc UpdatePodcast(PodcastUpdate) returns (Void) {}
     rpc DeletePodcast(ID) returns (Void) {}
     rpc GetUserPodcasts(Filter) returns (UserPodcasts) {}
+    rpc PublishPodcast(ID) returns (Success) {}
     rpc ValidatePodcastId(ID) returns (Success) {}
 }
 
@@ -57,4 +58,3 @@ message UserPodcasts {
 message Success {
     bool success = 1;
 }
-
