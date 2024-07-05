@@ -6,8 +6,8 @@ package episode_metadata;
 
 service episode_metadata {
     rpc CreateEpisodeMetaData(EpisodeMetadata) returns (Void) {}
-    rpc GetTrendingPodcasts(Void) returns (Podcasts) {}
-    rpc GetRecommendedPodcasts(ID) returns (Podcasts) {}
+    rpc GetTrendingPodcasts(Pagination) returns (Podcasts) {}
+    rpc GetRecommendedPodcasts(IdPage) returns (Podcasts) {}
     rpc GetPodcastsByGenre(Filter) returns (Podcasts) {}
     rpc SearchEpisode(Title) returns (Episode) {}
 }
@@ -32,6 +32,11 @@ message Podcasts {
 
 message Filter {
     repeated string Genres = 1;
+    Pagination pagination = 2;
+}
+
+message IdPage {
+    string id = 1;
     Pagination pagination = 2;
 }
 
