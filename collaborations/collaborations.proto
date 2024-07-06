@@ -6,6 +6,7 @@ package collaborations;
 
 service Collaborations {
     rpc CreateInvitation(CreateInvite) returns (ID);
+    rpc CreateOwner(CreateAsOwner) returns (ID);
     rpc RespondInvitation(CreateCollaboration) returns (ID);
     rpc GetCollaboratorsByPodcastId(ID) returns (Collaborators);
     rpc UpdateCollaboratorByPodcastId(UpdateCollaborator) returns (Void);
@@ -30,6 +31,12 @@ message Ids {
 message CreateCollaboration{
     string status = 1;
     string invitation_id = 2;
+    string podcast_id = 3;
+    string user_id = 4;
+}
+
+message CreateAsOwner{
+    string role = 1;
     string podcast_id = 3;
     string user_id = 4;
 }
